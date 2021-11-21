@@ -1,0 +1,36 @@
+export default class Checker {
+    verifyInput(){
+        const inputValue = document.querySelector(".my-input")
+
+        if(inputValue.value == ""){
+            console.log("Error");
+            this.getErrorContainer("Debe  llenar el campo de busqueda")
+        }
+    }
+
+    getErrorContainer(errorMsg){
+        const fragment = new DocumentFragment()
+        const errorContainer = document.querySelector(".error-container")
+        const errorTemplate = document.querySelector(".error-template").content
+
+        const clone = errorTemplate.cloneNode(true)
+        fragment.appendChild(clone)
+
+        errorContainer.appendChild(fragment)
+
+        document.querySelector(".alert-error").innerText = errorMsg;
+        this.displayError(errorContainer)
+    }
+
+    displayError(errorContainer){
+        errorContainer.style.display = "block";
+
+        setTimeout(() => {
+            errorContainer.style.display = "none";
+
+            while(errorContainer.firstChild){
+                errorContainer.firstChild.remove()
+            }
+        }, 1500)
+    }
+}
