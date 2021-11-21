@@ -1,3 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
-    background-color: rgb(187, 18, 97);
+    background-color: rgb(29, 45, 80);
+    font-family: 'Mulish', sans-serif
+}
+header{
+    background-color: rgb(30, 95, 116);
+    padding: 30px;
+    display: flex;
+}
+header img{
+    display: 1;
+    width: 20%;
+    margin: auto;
+}
+main{
+    background-color: rgb(19, 59, 92);
+    width: 80%;
+    margin: auto;
+    padding: 30px;
 }
