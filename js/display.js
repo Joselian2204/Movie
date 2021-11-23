@@ -9,7 +9,8 @@ export default class Display{
     }
 
     displayDefaultCards(){
-        
+        let moviesImg = this.moviesInfo[0];
+        let moviesTitles = this.moviesInfo[1];
     }
 
 }

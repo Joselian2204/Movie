@@ -25,8 +25,8 @@ export default class Request{
         });
 
         Promise.all(result),then(() => {
-            const display =  new Display()
-
+            const container = document.querySelector(".default-row");
+            const display =  new Display(moviesInfo, this.template, container);
             display.displayDefaultCards();
         });
     }
