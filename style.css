@@ -8,6 +8,10 @@
     font-family: 'Mulish', sans-serif;
 }
 
+body{
+  background-image: linear-gradient(-60deg,#4A0722 ,#4A0722);
+}
+
 .material-icons{
     margin-top: 5px;
     font-size: 26;
@@ -22,6 +26,13 @@
   width: 10px;
   background-image: url(assets/x.png);
   background-size: 10px 10px;
+}
+
+.myHr{
+  border: 1px solid #F5CAD6;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  
 }
 
 /*------------------------------------------Navbar-------------------------------------------------*/
@@ -64,7 +75,7 @@
     outline: none;
 }
 
-
+/*------------------------------------------Carousel-------------------------------------------------*/
 
 .carousel {
     margin-bottom: 4rem;
@@ -83,4 +94,33 @@
     left: 0;
     min-width: 100%;
     height: 32rem;
+  }
+
+  /*------------------------------------------Cards-------------------------------------------------*/
+
+  .myCard{
+    border: none !important;
+    background-color: #761A33 !important;
+    color: #ffffff;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.07);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.07);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.07);
+  }
+
+  .card img {
+    max-height: 18rem;
+    min-height: 18rem;
+  }
+  
+  .row {
+    margin-bottom: 20px;
+  }
+  
+  .new-row {
+    display: none;
+  }
+  
+
+  .mySuperTitle{
+    color: #F5CAD6;
   }

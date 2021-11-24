@@ -1,12 +1,28 @@
 import Display from "./display.js";
+import Checker from "./checker.js";
 
 export default class Request{
     constructor(){
         this.template = document.querySelector(".card-template").content;
     }
 
+    async getInfo(inputValue){
+        try{
+            const url = `http://www.omdbapi.com/?s=${inputValue}&apikey=9142b0fd`
+            const response = await fetch(url)
+            const json = await response.json();
+
+            const container = document.querySelector(".new-row")
+            const display = new Display(json.Search, this.template, container);
+            display.displayUserCards();
+        }catch (error){
+            const checker = new Checker();
+            checker.getErrorContainer("Pelicula no encontrada!")
+        }
+    }
+
     getMultipleInfo(moviesName){
-        const moviesInfo = [[],[]]
+        const moviesInfo = [[],[],[]]
         const result = moviesName.map((item) => {
             return new Promise(async (resolve) => {
                 try{
@@ -16,6 +32,7 @@ export default class Request{
 
                     moviesInfo[0].push(json.Poster);
                     moviesInfo[1].push(json.Title);
+                    moviesInfo[2].push(json.Runtime);
 
                     resolve();
                 }catch (error){
@@ -24,8 +41,8 @@ export default class Request{
             });
         });
 
-        Promise.all(result),then(() => {
-            const container = document.querySelector(".default-row");
+        Promise.all(result).then(() => {
+            const container = document.querySelectorAll(".default-row");
             const display =  new Display(moviesInfo, this.template, container);
             display.displayDefaultCards();
         });

@@ -1,28 +1,29 @@
-import Request from './request.js';
+import Request from "./request.js";
 
 export default class Cards {
-    async getMoviesExample(){
-        const response = await fetch("/exampleDB.json")
-        const json =  await response.json()
+  getImages(json) {
+    const values = Object.values(json);
+    const imgArray = [];
 
-        this.getImages(json);
+    while (imgArray.length <= 11) {
+      let item = this.newItem(values);
+
+      imgArray.push(item);
     }
 
-    getImages(json){
-        const values = Object.values(json)
-        const imgArray = []
+    const request = new Request();
+    request.getMultipleInfo(imgArray);
+  }
 
-        while(imgArray.length <= 11){
-            let item = this.newItem(values);
+  newItem(values) {
+    const item = values[Math.floor(Math.random() * values.length)];
+    return item;
+  }
 
-            imgArray.push(item);
-        }
-        const request =  new Request();
-        request.getMultipleInfo(imgArray);
-    }
+  async getMoviesExample() {
+    const response = await fetch("/movies.json");
+    const json = await response.json();
 
-    newItem(values){
-        const item = values[Math.floor(Math.random()*values.length)];
-        return item;
-    }
+    this.getImages(json);
+  }
 }
