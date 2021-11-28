@@ -32,7 +32,7 @@ export default class Request{
 
                     moviesInfo[0].push(json.Poster);
                     moviesInfo[1].push(json.Title);
-                    moviesInfo[2].push(json.Runtime);
+                    moviesInfo[2].push(json.Year);
 
                     resolve();
                 }catch (error){

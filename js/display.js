@@ -11,11 +11,11 @@ export default class Display {
     displayDefaultCards() {
       let moviesImg = this.moviesInfo[0];
       let moviesTitles = this.moviesInfo[1];
-      let moviesRuntime = this.moviesInfo[2];
+      let moviesYear = this.moviesInfo[2];
   
       const imgArray = this.getNewArray(moviesImg);
       const titleArray = this.getNewArray(moviesTitles);
-      const runtimeArray = this.getNewArray(moviesRuntime);
+      const yearArray = this.getNewArray(moviesYear);
   
       this.container.forEach((row, i) => {
         i === 0 ? (moviesTitles = titleArray[0]) : (moviesTitles = titleArray[1]);
@@ -23,8 +23,8 @@ export default class Display {
         imgArray[i].forEach((movie, i) => {
           this.card.children[0].setAttribute("src", `${movie}`);
           this.card.children[1].children[0].innerText = moviesTitles[i];
-          const runtimevalue = "Duración: "+moviesRuntime[i];
-          this.card.children[1].children[1].innerText = runtimevalue;
+          const yearValue = "Año: "+moviesYear[i];
+          this.card.children[1].children[1].innerText = yearValue;
   
           this.clone = this.template.cloneNode(true);
           this.fragment.appendChild(this.clone);
@@ -61,7 +61,7 @@ export default class Display {
   
       newCardImg.setAttribute("src", `${movie.Poster}`);
       newCardBody.children[0].innerText = movie.Title;
-      newCardBody.children[1].innerText = movie.Year;
+      newCardBody.children[1].innerText = "Año: "+movie.Year;
       console.log(movie);
     }
   
