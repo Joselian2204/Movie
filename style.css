@@ -37,7 +37,11 @@ body{
 
 /*------------------------------------------Navbar-------------------------------------------------*/
 .menu-bar{
-    background-image: linear-gradient(-150deg,#AE2445,#4A0722);
+  background-image: linear-gradient(-150deg,#AE2445,#4A0722);
+}
+
+.menu-bar.active{
+
 }
 
 .navbar-brand img{
@@ -127,3 +131,79 @@ body{
     font-size: 20px;
   }
 
+/*------------------------------------------Profile Card-------------------------------------------------*/
+
+  .containerCard {
+    position: relative;
+    background-color: #fdfdfd;
+    width: 220px;
+    height: 220px;
+    padding: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 60px 5px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    transition: width 0.4s, height 0.4s,
+        border-radius 0.4s;
+}
+
+.containerCard:hover {
+    width: 340px;
+    height: 440px;
+    border-radius: 4px;
+}
+
+.img-container {
+    width: 170px;
+    height: 170px;
+    min-height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.2);
+}
+
+.img-container img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.full-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.preferences,
+.description {
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.preferences {
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #4A0722;
+}
+
+.profiles{
+  display: flex;
+  justify-content: center;
+}
+
+.usersContainer{
+  background-color: #f1dbe1;
+  padding: 2rem;
+}
+
+.cinefilosText{
+  color: #4A0722;
+}
