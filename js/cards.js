@@ -21,7 +21,7 @@ export default class Cards {
   }
 
   async getMoviesExample() {
-    const response = await fetch("/movies.json");
+    const response = await fetch("./movies.json");
     const json = await response.json();
 
     this.getImages(json);
